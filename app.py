@@ -1,6 +1,11 @@
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 import requests
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI()
 
@@ -12,11 +17,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# PASTE YOUR KEY HERE
-MURF_API_KEY = "ap2_22fd3ae3-193e-4bce-a4c5-54031373a434"
+# API Key is now loaded securely from the .env file
+MURF_API_KEY = os.getenv("MURF_API_KEY")
 
 @app.post("/generate")
 async def generate_audio(text: str = Form(...), voice_id: str = Form(...)):
+    if not MURF_API_KEY:
+        raise HTTPException(status_code=500, detail="MURF_API_KEY not set in environment variables")
+
     url = "https://api.murf.ai/v1/speech/generate"
     
     headers = {
@@ -25,7 +33,7 @@ async def generate_audio(text: str = Form(...), voice_id: str = Form(...)):
     }
     
     data = {
-        "voiceId": voice_id, # Example: "en-US-natalie"
+        "voiceId": voice_id,  # Example: "en-US-natalie"
         "text": text,
         "format": "MP3"
     }
@@ -33,6 +41,6 @@ async def generate_audio(text: str = Form(...), voice_id: str = Form(...)):
     response = requests.post(url, json=data, headers=headers)
     
     if response.status_code == 200:
-        return response.json() # This returns a link to the audio file
+        return response.json()  # This returns a link to the audio file
     else:
         raise HTTPException(status_code=400, detail="Murf API Error")
