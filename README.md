@@ -1,12 +1,12 @@
 # 🎙️ Voice Mimic AI
 
 > An AI-powered web app that converts your text (or spoken voice) into a cloned AI voice using the **Murf AI API**.
-
+>**[Click here to open](https://voice-mimic-ai-website.vercel.app/)**
 ---
 
 ## 🎥 Demo
 
-> 📹 **[Click here to watch the demo video](https://your-demo-link-here.com)**
+> 📹 **[Click here to watch the demo video](https://drive.google.com/file/d/1v1I3czWbYlzWEdmWmb5JmLjUhqAFLBvg/view?usp=sharing)**
 > *(Replace this link with your actual YouTube/Google Drive demo URL)*
 
 ---
