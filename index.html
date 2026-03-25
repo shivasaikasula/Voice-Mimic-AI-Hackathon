@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Mimic AI Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <h1>Voice Mimic AI 🎙️</h1>
+        
+        <div class="input-group">
+            <label>1. Choose AI Persona</label>
+            <select id="voiceId">
+                <option value="en-US-natalie">Natalie (Cheerful)</option>
+                <option value="en-US-marcus">Marcus (Professional)</option>
+                <option value="en-UK-gabriel">Gabriel (British)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>2. Input Method</label>
+            <textarea id="textInput" placeholder="Type here or use the microphone..."></textarea>
+            
+            <div class="file-upload-wrapper">
+                <span>Or upload a text file:</span>
+                <input type="file" id="fileUpload" accept=".txt">
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" class="record-btn" id="recordBtn">🎤 Record Voice</button>
+            <button type="button" class="generate-btn" onclick="makeMeTalk()">✨ Generate AI Voice</button>
+        </div>
+
+        <div id="result-section">
+            <audio id="player" controls></audio>
+            <button id="downloadBtn" class="download-btn">📥 Download MP3</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
