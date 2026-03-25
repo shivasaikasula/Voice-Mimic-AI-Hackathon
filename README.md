@@ -7,7 +7,6 @@
 ## 🎥 Demo
 
 > 📹 **[Click here to watch the demo video](https://drive.google.com/file/d/1v1I3czWbYlzWEdmWmb5JmLjUhqAFLBvg/view?usp=sharing)**
-> *(Replace this link with your actual YouTube/Google Drive demo URL)*
 
 ---
 
